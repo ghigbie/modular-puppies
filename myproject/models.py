@@ -1,3 +1,5 @@
+from myproject import db
+
 class Puppy(db.Model):
 
 
