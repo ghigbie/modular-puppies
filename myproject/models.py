@@ -2,7 +2,8 @@ class Puppy(db.Model):
 
 
     __tablename__ = 'puppies'
-    id = db.Column(db.Integer, primary_key = True)
+
+    id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.Text)
     owner = db.relationship('Owner', backref='puppy', uselist = False)
 
@@ -14,3 +15,20 @@ class Puppy(db.Model):
             return f"Puppy name is {self.name} and owner is {self.owner}"
         else:
             return f"Puppy name is {self.name} and there is no owner (born free)"
+
+    
+class Owner(db.Model):
+
+
+     __tablename__ = "owners"
+
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.Text)
+    puppy_id = db. column(db.Integer, db. ForeignKey('puppies.id'))
+
+    def __init__(self, name, puppy_id):
+        self.name = name
+        self.puppy_id = puppy_id
+
+    def __repr__(self):
+        return f"Owner Name: {self.name}"
