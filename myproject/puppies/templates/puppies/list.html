@@ -1,0 +1,10 @@
+{% extedns "base.html" %}
+{% block cotent %}
+<h1>Here is a list of all available puppies</h1>
+<p>Fill out the form below:</p>
+<ul>
+    {% for puppy in puppies %}
+    <li>{{ puppy }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
