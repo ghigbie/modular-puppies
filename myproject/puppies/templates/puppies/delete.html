@@ -1,0 +1,10 @@
+{% extedns "base.html" %}
+{% block cotent %}
+<h1>Did a Puppy get adopted?/h1>
+<p>Fill out the form below:</p>
+<form action="" method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.name.label }} {{ from.name() }}
+    {{ form.submit() }}
+</form>
+{% endblock %}
