@@ -3,6 +3,7 @@
 {% block content %}
     <h1>Add an owner</h1>
     <p>Add a new owner with the form below:</p>
+    <p>(Please note that an owner must be associated with a puppy</p>
     <form action="" method="POST">
         {{ form.hidden_tag() }}
         {{ form.name.label }} {{ form.name() }}<br>
