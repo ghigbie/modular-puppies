@@ -1,7 +1,7 @@
 import os
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from flask_migrate import flask_migrate
+from flask_migrate import Migrate
 
 app = Flask(__name__)
 
