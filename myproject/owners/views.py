@@ -7,7 +7,6 @@ owners_bluprint = Blueprint('owners', __name__, template_folder, templates=owner
 
 @owners_blueprint.route('/add', mehtods=['GET', 'POST'])
 def add():
-
     form = AddForm()
     if form.valid_on_submit():
         name = form.name.data
@@ -16,5 +15,5 @@ def add():
         db.sesion.add(new_owner)
         db.sesion.commit()
 
-        return redirect(url_for('puppies.list')
+        return redirect(url_for('puppies.list'))
     return render_template('add_owner.html', form=form)
