@@ -11,7 +11,7 @@ def add():
     form = AddForm()
     if form.valid_on_submit():
         name = form.name.data
-        pup_id form.pup_id.data
+        pup_id = form.pup_id.data
         new_owner = Owner(name, pup_id)
         db.sesion.add(new_owner)
         db.sesion.commit()
