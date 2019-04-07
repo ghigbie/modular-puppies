@@ -13,3 +13,9 @@ app.config['SQLALCHEMY_TRACK_MODIFCATIONS'] = False
 
 db = SQLAlchemy(app)
 Migrate(app, db)
+
+from myproject.puppies.views import puppies_blueprint
+from myproject.owners.views import owners_bluprint
+
+app.register_blueprint(puppies_blueprint, url_prefix='/puppies')
+app.register_blueprint(owners_blueprint, url_prefix='/owners')
