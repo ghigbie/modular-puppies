@@ -19,13 +19,16 @@
                     <a class="nav-link" href="{{ url_for('index') }}">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('about') }}">About</a>
+                    <a class="nav-link" href="{{ url_for('puppies.add') }}">Add Puppy</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('contact') }}">Caontact Us</a>
+                    <a class="nav-link" href="{{ url_for('puppies.list') }}">All Puppies</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('index') }}">Google</a>
+                    <a class="nav-link" href="{{ url_for('puppies.delete') }}">Delete Puppy</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('owners.add') }}">Add Owner</a>
                 </li>
             </ul>
          </div>
