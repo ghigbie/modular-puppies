@@ -5,6 +5,14 @@ from myproject.models import Puppy
 
 puppies_blueprint = Blueprint('puppies', __name__, template_folder='templates/puppies')
 
+def add():
+    form = AddForm()
+
+    if form.validate_on_submit():
+        name = form.name.data
+        new_pup = Puppy(name)
+        db.session.add(new_pup)
+        db.session.commit()
 
 def list():
     puppies = Puppy.query.all()
