@@ -1,10 +1,7 @@
 from myproject import db
 
 class Puppy(db.Model):
-
-
     __tablename__ = 'puppies'
-
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.Text)
     owner = db.relationship('Owner', backref='puppy', uselist = False)
@@ -20,10 +17,7 @@ class Puppy(db.Model):
 
     
 class Owner(db.Model):
-
-
-     __tablename__ = "owners"
-
+    __tablename__ = "owners"
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.Text)
     puppy_id = db. column(db.Integer, db. ForeignKey('puppies.id'))
